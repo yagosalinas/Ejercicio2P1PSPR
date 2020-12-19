@@ -1,0 +1,23 @@
+Visualiza los siguientes vídeos () y contesta:
+1.¿Qué entendemos por contexto de un proceso?
+El contexto es el mínimo conjunto de datos utilizado por una tarea que debe ser guardado para permitir su interrupciÃ³n en un momento dado, y una posterior continuaciÃ³n desde el punto en el que fue interrumpida en un momento futuro. 
+2.¿A que se refiere el concepto de multiprogramación?
+Normalmente vamos a tener muchos más procesos que CPUs y el problema que se nos deriva es que el proceso va a utilizar la CPU esto ocurre igual con otros recursos limitados por ejemplo la memoria, tenemos una sola memoria de muchos procesos que tienen acceder a ella. La alternancia rápida entre procesos es decir vamos a tener una CPU vamos a tener mucho procesos que quieren utilizarla, es lo que vamos a llamar multiprogramaciÃ³n y lo que va a dar la ilusiÃ³n de paralelismo, lo que llamamos pseudoparalelismo. Es decir tenemos una CPU y varios procesos que utilizarla y vamos a ir poniendo a procesos en la CPU para hacer que parezca que se están ejecutando todos a la vez cuando realmente no se está haciendo.
+3.¿Qué entendemos por demonio o daemon?
+Son procesos que se ejecutan en segundo plano sin la interacción directa cdel usuario
+4.¿Cuál es la diferencia principal entre UNIX Windows a la hora organizarlos procesos?
+Que en UNIX hay una relación jerárquica entre procesos y en Windows todos los procesos son iguales
+5.¿Cuántos padres como máximo puede tener un proceso en UNIX?
+1 máximo
+6.¿Cuántos hijos puede tener un proceso en UNIX?
+0 o más
+7.¿Cuales son los estados â€‹bÃ¡sicos del proceso?Â¿Cuando se encuentra un proceso en cada estado?
+Nuevo: programa que entra en ejecución pero todavía no ha sido cargado en memoria
+Listo: en el momento en el que el sistema operativo estime que hay suficientes recursos para ejecutar ese proceso entrarÃ¡ en memoria.
+Ejecutando: el proceso entra en la cpu hasta que termina o es bloqueado
+Bloqueado: el proceso se le a acabado el tiempo de ejecución porque hay otro proceso prioritario que necesita la cpu o es el propio proceso que necesita acceder a disco, hay un fallo de página o ha solicitado un evento,... y no necesita la Cpu
+Saliente: el proceso ya ha terminado
+Listo suspendido y Bloqueado suspendido: para que no hayan demasiados procesos en memoria esperando, los procesos pasan al disco duro
+8.¿Qué es un cambio de contexto? Pon un ejemplo
+Llega momento que un proceso se estÃ¡ ejecutando en la CPU y por distintas razones este proceso tiene que ser sustituido por otro proceso (concepto de multiprogramación) y es el sistema operativo se encarga de coger el proceso actual que se está ejecutando y guardar la información que tiene en ese momento en su PCB y cargar un nuevo proceso. Todo esto necesitará usar el cambio de contexto, el cambio de un proceso actual por un proceso nuevo. Es el sistema operativo quien tiene decidir qué nuevo proceso va a entrar (por un algoritmo de planificación) y tambien tiene que cargar y guardar esa información
+Por ejemplo, un proceso que esta utilizando la cpu pero en un momento necesita una lectura desde el disco duro en tonces entraria otro proceso a esto se le llamaria cambio de contexto. 
